@@ -23,3 +23,7 @@ appsettings.Development.json
 packages/
 *.nupkg
 project.lock.json
+
+#personal exceptions
+Guided-project-foreach-if-array-CSharp-main/
+Guided-project-foreach-if-array-CSharp-main.zip
