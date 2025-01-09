@@ -24,16 +24,28 @@ else
     Console.WriteLine("Your subscription has expired");
 }
 
-string[] fraudulentOrderIDs = new string[3];
+string[] orderIDs = {"B123", "C234", "A345", "C15", "B177", "G3003", "C235", "B179"};
+int fraudulentOrderIDs = 0;
 
-fraudulentOrderIDs[0] = "A123";
-fraudulentOrderIDs[1] = "B456";
-fraudulentOrderIDs[2] = "C789";
+foreach (string orderID in orderIDs)
+{
+    if (orderID.StartsWith("B"))
+    {
+        Console.WriteLine($"This order ID starts with a 'B': {orderID}");
+        fraudulentOrderIDs++;
+    }
+}
+Console.WriteLine($"There are {fraudulentOrderIDs} potentially fraudulent orders to process.");
 
-//this entire array can actually be written as string[] fraudulentOrderIDs = ["A123", "B456", "C789"];
 
-Console.WriteLine($"First fraudulent order ID: {fraudulentOrderIDs[0]}");
-Console.WriteLine($"Second fraudulent order ID: {fraudulentOrderIDs[1]}");
-Console.WriteLine($"Third fraudulent order ID: {fraudulentOrderIDs[2]}");
+int[] inventory = { 200, 450, 700, 175, 250 };
+int sum  = 0;
+int bin = 0;
 
-Console.WriteLine($"There are {fraudulentOrderIDs.Length} fraudulent orders to process.");
+foreach (int item in inventory)
+{
+    bin++;
+    sum += item;
+    Console.WriteLine($"Bin {bin} = {item} items (Running total: {sum})");
+}
+Console.WriteLine($"We have {sum } items in inventory.");
