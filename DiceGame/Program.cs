@@ -1,5 +1,6 @@
 ﻿//how to implement the System.Random and System.Console class in C#.
 Random dice = new Random();
+
 int roll1 = dice.Next();
 int roll2 = dice.Next(101);
 int roll3 = dice.Next(50,101);
@@ -16,6 +17,7 @@ int largerValue = Math.Max(firstValue, secondValue);
 Console.WriteLine(largerValue);
 
 Random newDice = new Random();
+
 int newRoll1 = newDice.Next(1, 7);
 int newRoll2 = newDice.Next(1, 7);
 int newRoll3 = newDice.Next(1, 7);
