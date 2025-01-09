@@ -1,4 +1,9 @@
 ﻿using System.Diagnostics;
+// This is a single line comment
+
+/* This on the other hand,
+is how to properly write a multi-line comment
+*/
 
 Random random = new();
 int daysUntilExpiration = random.Next(12);
@@ -49,3 +54,24 @@ foreach (int item in inventory)
     Console.WriteLine($"Bin {bin} = {item} items (Running total: {sum})");
 }
 Console.WriteLine($"We have {sum } items in inventory.");
+
+/*
+    The following code creates five random orderIDs to test the fraud detection process.
+    OrderIDs consists of a letter from A to E and a three-digit number. Example: A123
+*/
+Random random1 = new();
+string[] orderIDs1 = new string[5];
+
+for (int i = 0; i < orderIDs1.Length; i++)
+{
+    int prefixValue = random1.Next(65, 70);
+    string prefix = Convert.ToChar(prefixValue).ToString();
+    string suffix = random1.Next(1, 1000).ToString("000");
+
+    orderIDs1[i] = prefix + suffix;
+}
+
+foreach (var orderID in orderIDs1)
+{
+    Console.WriteLine(orderID);
+}
