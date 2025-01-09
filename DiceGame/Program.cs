@@ -55,3 +55,29 @@ else
 {
     Console.WriteLine("You get a new kitten!");
 }
+
+/*
+This piece of code takes a string, reverses it and checks if it contains certain letters.
+If it does, it counts the number of times the letter appears in the string.
+Then it prints out the reversed string and the number of times the letter appears in the string.
+*/
+
+string message = "The quick brown fox jumps over the lazy dog";
+
+char[] messageLetters = message.ToCharArray();
+Array.Reverse(messageLetters);
+
+int count = 0;
+
+foreach (char letter in messageLetters)
+{
+    if (letter == 'o')
+    {
+        count++;
+    }
+}
+
+string reversedMessage = new string(messageLetters);
+
+Console.WriteLine(reversedMessage);
+Console.WriteLine($"The letter 'o' appears {count} times in the message.");
