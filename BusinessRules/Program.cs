@@ -30,6 +30,8 @@ fraudulentOrderIDs[0] = "A123";
 fraudulentOrderIDs[1] = "B456";
 fraudulentOrderIDs[2] = "C789";
 
+//this entire array can actually be written as string[] fraudulentOrderIDs = ["A123", "B456", "C789"];
+
 Console.WriteLine($"First fraudulent order ID: {fraudulentOrderIDs[0]}");
 Console.WriteLine($"Second fraudulent order ID: {fraudulentOrderIDs[1]}");
 Console.WriteLine($"Third fraudulent order ID: {fraudulentOrderIDs[2]}");
