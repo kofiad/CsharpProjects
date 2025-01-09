@@ -1,4 +1,6 @@
-﻿Random random = new();
+﻿using System.Diagnostics;
+
+Random random = new();
 int daysUntilExpiration = random.Next(12);
 int discountPercentage;
 if (daysUntilExpiration <= 10)
@@ -21,3 +23,15 @@ else
 {
     Console.WriteLine("Your subscription has expired");
 }
+
+string[] fraudulentOrderIDs = new string[3];
+
+fraudulentOrderIDs[0] = "A123";
+fraudulentOrderIDs[1] = "B456";
+fraudulentOrderIDs[2] = "C789";
+
+Console.WriteLine($"First fraudulent order ID: {fraudulentOrderIDs[0]}");
+Console.WriteLine($"Second fraudulent order ID: {fraudulentOrderIDs[1]}");
+Console.WriteLine($"Third fraudulent order ID: {fraudulentOrderIDs[2]}");
+
+Console.WriteLine($"There are {fraudulentOrderIDs.Length} fraudulent orders to process.");
