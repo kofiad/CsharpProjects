@@ -17,10 +17,11 @@ int[] beckyScores = [92, 91, 90, 91, 92, 92, 92];
 int[] chrisScores = [84, 86, 88, 90, 92, 94, 96, 98];
 int[] ericScores = [80, 90, 100, 80, 90, 100, 80, 90];
 int[] gregorScores = [91, 91, 91, 91, 91, 91, 91];
-int[] studentScores = new int[10];
+int[] studentScores;
 string currentStudentLetterGrade;
 string[] names = ["Sophia", "Andrew", "Emma", "Logan", "Becky", "Chris", "Eric", "Gregor"];
-Console.WriteLine("Student\t\tGrade\n");
+
+Console.WriteLine("Student\t\tExam Score\tOverall Grade\t\tExtra Credit\n");
 
 foreach (string name in names)
 {
@@ -64,7 +65,12 @@ foreach (string name in names)
     }
 
     int sumAssignmentScores = 0;
+    int sumExamsScores = 0;
+    int creditPoints = 0;
+    int creditScore = 0;
     decimal currentStudentGrade = 0;
+    decimal examScore = 0;
+    decimal extraCredit = 0;
     var gradedAssignments = 0;
 
     foreach (int score in studentScores)
@@ -74,14 +80,19 @@ foreach (string name in names)
         if (gradedAssignments <= examAssignments)
         {
             sumAssignmentScores += score;
+            sumExamsScores += score;
         }
         else
         {
             sumAssignmentScores += score / 10;
+            creditPoints += score;
         }
     }
 
+    examScore = (decimal)sumExamsScores / examAssignments;
     currentStudentGrade = (decimal)sumAssignmentScores / examAssignments;
+    creditScore = creditPoints / ( studentScores.Length - examAssignments );
+    extraCredit = (decimal)creditPoints / (10 * examAssignments);
 
     if (currentStudentGrade >= 97)
     {
@@ -136,7 +147,7 @@ foreach (string name in names)
         currentStudentLetterGrade = "F";
     }
 
-    Console.WriteLine($"{name}:\t\t {currentStudentGrade} \t {currentStudentLetterGrade}");
+    Console.WriteLine($"{name}:\t\t{examScore}\t\t {currentStudentGrade} \t {currentStudentLetterGrade}\t\t{creditScore} ({extraCredit} pts)");
 }
 
 Console.WriteLine("Press the Enter key to continue");
