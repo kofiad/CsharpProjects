@@ -14,8 +14,13 @@ int flipOptions = random.Next(1, 3);
 string flip = flipOptions == 1 ? "Heads" : "Tails";
 Console.WriteLine(flip);
 
-string permission = "Manager";
+string permission = "fish";
 int level = 40;
 string adminMessage = permission.Contains("Admin") && level > 55 ? "Welcome, Super Admin User." : "Welcome, Admin user.";
 string managerMessage = permission.Contains("Manager") && level > 20 ? "Contact Admin for access." : "You do not have sufficient privilleges.";
+while (!permission.Contains("Admin") || !permission.Contains("Manager"))
+{
+    Console.WriteLine("You do not have sufficient privilleges.");
+    break;
+}
 Console.WriteLine( permission.Contains("Admin") ? adminMessage : managerMessage );
